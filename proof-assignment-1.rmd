@@ -1,0 +1,66 @@
+---
+title: "Mathematical Proof"
+author: "John Shea"
+date: "12/27/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE)
+csv <- read.csv("~/projects/snhu/proof/proof-1-Q3.csv")
+```
+
+## Assignment \#1
+
+1.
+    a. $A \land B$
+    b. Can be either:
+        - $\neg A \land \neg B \land C$
+        - $\neg (A \lor B) \land C$
+    c. $(A \land C) \lor (B \land \neg C)$
+    
+\bigskip
+
+2.
+    a. Can be either:
+        - Either Doug is tall and Eddie is short, or Doug is not tall.
+        - Either Doug is not tall, or and Doug is tall and Eddie is short
+    b. Future.
+    
+\bigskip
+    
+3.
+```{r, echo=FALSE}
+cols <- c("$G$", "$H$", "$L$", "$G \\lor \\neg H$", "$\\neg (G \\land H)$", "$(G \\lor \\neg H) \\land \\neg(G \\land L)$")
+kable(csv, col.names=cols, booktabs=TRUE, align='cccccc')
+```
+
+
+\bigskip
+
+4.
+
+\bigskip
+
+5.
+|future|table|
+|---|---|
+|T | F|
+    a. regular
+    b. contradiction
+        - Because the only connective used is the and (i.e. $\land$) operator, the
+          parentheses are unneccessary. When those are removed, it is apparent that
+          all of the individual terms (i.e. $M, \neg N, \neg M, N$) need to be true.
+          Therefore both $M$ and $\neg M$, as well as, both $N$ and $\neg N$ are
+          required to provied an answer of True. Both of those are contradictions
+          and therefore either of those would be enought to render the statement a
+          contradiction. 
+    c. tautology
+        - 
+          
+\bigskip
+
+6.
+    a. $Q \land P$
+    b. $P \land \neg R$
