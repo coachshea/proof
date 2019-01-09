@@ -1,66 +1,136 @@
 ---
 title: "Mathematical Proof"
 author: "John Shea"
-date: "12/27/2018"
-output: pdf_document
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+fontsize: 12pt
+output:
+  pdf_document:
+    extra_dependencies:
+      - makecell
+      - booktabs
+      - float
 ---
 
 ```{r setup, include=FALSE}
 library(knitr)
-knitr::opts_chunk$set(echo = TRUE)
-csv <- read.csv("~/projects/snhu/proof/proof-1-Q3.csv")
+library(kableExtra)
+knitr::opts_chunk$set(echo = FALSE)
+question_three <- read.csv("~/projects/snhu/proof/question_three.csv")
+question_four <- read.csv("~/projects/snhu/proof/question_four.csv")
+question_five_prelim <- read.csv("~/projects/snhu/proof/question_five_prelim.csv")
+question_five_conclusion <- read.csv("~/projects/snhu/proof/question_five_conclusion.csv")
 ```
 
-## Assignment \#1
+# Assignment \#1
 
-1.
-    a. $A \land B$
-    b. Can be either:
-        - $\neg A \land \neg B \land C$
-        - $\neg (A \lor B) \land C$
-    c. $(A \land C) \lor (B \land \neg C)$
-    
-\bigskip
+## Question 1
 
-2.
-    a. Can be either:
-        - Either Doug is tall and Eddie is short, or Doug is not tall.
-        - Either Doug is not tall, or and Doug is tall and Eddie is short
-    b. Future.
-    
-\bigskip
-    
-3.
-```{r, echo=FALSE}
-cols <- c("$G$", "$H$", "$L$", "$G \\lor \\neg H$", "$\\neg (G \\land H)$", "$(G \\lor \\neg H) \\land \\neg(G \\land L)$")
-kable(csv, col.names=cols, booktabs=TRUE, align='cccccc')
+a. $A \land B$
+b. Can be either:
+    - $\neg A \land \neg B \land C$
+    - $\neg (A \lor B) \land C$
+c. $(A \land C) \lor (B \land \neg C)$
+  
+## Question 2
+a. Can be either:
+    - Either Doug is tall and Edie is short, or Doug is not tall.
+    - Either Doug is not tall, or Doug is tall and Edie is short
+b. Either Doug is tall or Edie is not short; and 
+c. Doug is not tall and Edie is not short.
+    - Alhtough this statement looks more complicated, the left
+      side of the statement requires Doug not to be tall. Therefore,
+      the only one of the two terms inside the brackets that could
+      possibly be true is Edie is not short.
+
+
+```{r}
+cols <- c("\\thead{$G$}", "\\thead{$H$}", "\\thead{$L$}",
+          "\\thead{$G \\lor \\neg H$}",
+          "\\thead{$\\neg (G \\land H)$}",
+          "\\thead{$(G \\lor \\neg H) \\land \\neg(G \\land L)$}")
+kable(question_three, "latex", escape=F, col.names=cols,
+      booktabs=T, align='cccccc', linesep='') %>%
+  kable_styling(position = "center") %>%
+  add_header_above(c(" " = 3, "Preliminaries"= 2, "Conclusion"=1))
 ```
 
 
-\bigskip
+## Question 4
 
-4.
+### Conclusion
 
-\bigskip
+```{r}
+cols <- c("\\thead{$J$}", "\\thead{$K$}",
+          "\\thead{$(J \\land K) \\lor (\\neg J \\land \\neg K)$}",
+          "\\thead{$J \\lor K$}",
+          "\\thead{$J \\land \\neg K$}",
+          "\\thead{$\\neg(\\neg J \\lor K)$}",
+          "\\thead{$(J \\land \\neg K) \\lor K$}")
+kable(question_four, "latex", col.names=cols, escape=F, booktabs=T, align='cccccc') %>%
+  kable_styling(position = "center") %>%
+  add_header_above(c(" " = 2, "a"= 1, "b"=1, "c"=1, "d"=1, "e"=1))
+```
 
-5.
-|future|table|
-|---|---|
-|T | F|
-    a. regular
-    b. contradiction
-        - Because the only connective used is the and (i.e. $\land$) operator, the
-          parentheses are unneccessary. When those are removed, it is apparent that
-          all of the individual terms (i.e. $M, \neg N, \neg M, N$) need to be true.
-          Therefore both $M$ and $\neg M$, as well as, both $N$ and $\neg N$ are
-          required to provied an answer of True. Both of those are contradictions
-          and therefore either of those would be enought to render the statement a
-          contradiction. 
-    c. tautology
-        - 
+### Explanation
+
+- b and e are equivalent
+    - using the distribution law, $e$ become $(K \lor J) \land (K \lor \neg K)$
+    - $K \lor \neg K$ is a tautology, therefore the above statement is equivalent to
+      $J \lor K$, which is statement $b$
+- c and d are equivalent
+    - using DeMorgan's law, $d$ becomes $\neg\neg J \lor \neg K$
+    - using the Double Negation law, the above statement becomes $J \lor \neg K$,
+      which is $c$
+
+## Question 5
+
+### Preliminaries
+
+```{r}
+cols <- c("\\thead{$M$}", "\\thead{$N$}",
+          "\\thead{$M \\land \\neg N$}",
+          "\\thead{$\\neg M \\land N$}",
+          "\\thead{$\\neg M \\lor N$}",
+          "\\thead{$\\neg M \\lor N$}")
+kable(question_five_prelim, "latex", escape=F, col.names=cols, booktabs=T, align='cccccc') %>%
+  kable_styling(position = "center")
+```
+
+### Conclusion
+
+```{r}
+cols <- c("\\thead{$(M \\land \\neg N) \\lor (\\neg M \\land N)$}",
+          "\\thead{$(M \\land \\neg N) \\land (\\neg M \\land N)$}",
+          "\\thead{$(\\neg M \\land \\neg N) \\lor (\\neg M \\lor N) \\lor (M \\land \\neg N)$}")
+kable(question_five_conclusion, "latex", escape=F, col.names=cols, booktabs=T, align='ccc') %>%
+  kable_styling(position = "center") %>%
+  add_header_above(c("a"=1, "b"=1,"c"=1))
+```
+
+### Explanation
+
+a. regular
+b. contradiction
+    - Because the only connective used is the and (i.e. $\land$) operator, the
+      associative law indicates that the parentheses are unneccessary. When
+      those are removed, it is apparent that all of the individual terms (i.e.
+      $M, \neg N, \neg M, N$) need to be true. Therefore both $M$ and $\neg M$,
+      as well as, both $N$ and $\neg N$ are required to provied an answer of
+      True. Both of those are contradictions and therefore either of those would
+      be enought to render the statement a contradiction. 
+c. tautology
+    - Statement $c$ is comprised of three disjunct terms (($\neg M \land \neg
+      N$), ($\neg M \lor N$), ($M \land \neg N$)). Therefore, if any one of the
+      terms is true, the statement is true. That statement $c$ is a tautology is
+      most easily demonstrated by beginning with the second term ($\neg M \lor
+      N$). The only way this can fail is if $M$ is true and $N$ is not true ($M
+      \land \neg N$), which is the third term. Therefore, one of these two terms
+      is always true. The first term is not needed to demonstrate the tautology.
           
-\bigskip
+## Question 6
 
-6.
-    a. $Q \land P$
-    b. $P \land \neg R$
+a. $\lnot[\lnot Q \lor (\lnot P \land Q)]$
+\input{assign-1-6a}
+
+b. $((P \land Q) \land \lnot R) \lor [P \land \lnot(Q \lor R)]$
+\input{assign-1-6b}

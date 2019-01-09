@@ -1,0 +1,115 @@
+---
+title: "Mathematical Proof"
+author: "John Shea"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  pdf_document:
+    extra_dependencies:
+      - "makecell"
+      - "booktabs"
+      - "venndiagram"
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE)
+question_three <- read.csv("~/projects/snhu/proof/question_three.csv")
+question_four <- read.csv("~/projects/snhu/proof/question_four.csv")
+question_five_prelim <- read.csv("~/projects/snhu/proof/question_five_prelim.csv")
+question_five_conclusion <- read.csv("~/projects/snhu/proof/question_five_conclusion.csv")
+```
+
+# Assignment \#2
+
+## Question 1
+
+\begin{center}
+\begin{venndiagram3sets}
+  \fillOnlyA
+\end{venndiagram3sets}
+\end{center}
+  
+## Question 2
+
+\begin{center}
+\begin{venndiagram3sets}
+  \fillACapB
+\end{venndiagram3sets}
+\end{center}
+    
+## Question 3
+
+```{r}
+cols <- c("$G$", "$H$", "$L$",
+          "$G \\lor \\neg H$",
+          "$\\neg (G \\land H)$",
+          "$(G \\lor \\neg H) \\land \\neg(G \\land L)$")
+kable(question_three, col.names=cols, booktabs=TRUE, align='cccccc')
+```
+
+
+## Question 4
+
+### Conclusion
+
+```{r}
+cols <- c("\\thead{\\\\$J$}", "\\thead{\\\\$K$}",
+          "\\thead{a\\\\ $(J \\land K) \\lor (\\neg J \\land \\neg K)$}",
+          "\\thead{b\\\\ $J \\lor K$}",
+          "\\thead{c\\\\ $J \\land \\neg K$}",
+          "\\thead{d\\\\ $\\neg(\\neg J \\lor K)$}",
+          "\\thead{e\\\\ $(J \\land \\neg K) \\lor K$}")
+kable(question_four, col.names=cols, booktabs=TRUE, align='cccccc')
+```
+
+### Explanation
+
+- b and e are equivalent
+    - using the distribution law, $e$ become $(K \lor J) \land (K \lor \neg K)$
+    - $K \lor \neg K$ is a tautology, therefore the above statement is equivalent to
+      $J \lor K$, which is statement $b$
+- c and d are equivalent
+    - using DeMorgan's law, $d$ becomes $\neg\neg J \lor \neg K$
+    - using the Double Negation law, the above statement becomes $J \lor \neg K$,
+      which is $c$
+
+## Question 5
+
+### Preliminaries
+
+```{r}
+cols <- c("\\thead{\\\\$M$}", "\\thead{\\\\$N$}",
+          "\\thead{\\\\$M \\land \\neg N$}",
+          "\\thead{\\\\$\\neg M \\land N$}",
+          "\\thead{\\\\$\\neg M \\lor N$}",
+          "\\thead{\\\\$\\neg M \\lor N$}")
+kable(question_five_prelim, col.names=cols, booktabs=TRUE, align='cccccc')
+```
+
+### Conclusion
+
+```{r}
+cols <- c("\\thead{a\\\\ $(M \\land \\neg N) \\lor (\\neg M \\land N)$}",
+          "\\thead{b\\\\ $(M \\land \\neg N) \\land (\\neg M \\land N)$}",
+          "\\thead{c\\\\ $(\\neg M \\land \\neg N) \\lor (\\neg M \\lor N) \\lor (M \\land \\neg N)$}")
+kable(question_five_conclusion, col.names=cols, booktabs=TRUE, align='ccc')
+```
+
+### Explanation
+
+\begin{center}
+\begin{venndiagram3sets}[labelOnlyA={1},
+                         labelOnlyB={2},
+                         labelOnlyC={3},
+                         labelOnlyAB={4},
+                         labelOnlyAC={5},
+                         labelOnlyBC={6},
+                         labelABC={7},labelNotABC={8}]
+\fillACapC
+\end{venndiagram3sets}
+\end{center}
+          
+## Question 6
+
+a. $Q \land P$
+b. $P \land \neg R$
