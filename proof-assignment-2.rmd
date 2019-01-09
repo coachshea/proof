@@ -2,6 +2,7 @@
 title: "Mathematical Proof"
 author: "John Shea"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
+fontsize: 12pt
 output:
   pdf_document:
     extra_dependencies:
@@ -9,6 +10,8 @@ output:
       - "booktabs"
       - "venndiagram"
 ---
+
+\newcommand\such{\ |\ }
 
 ```{r setup, include=FALSE}
 library(knitr)
@@ -23,44 +26,100 @@ question_five_conclusion <- read.csv("~/projects/snhu/proof/question_five_conclu
 
 ## Question 1
 
-\begin{center}
-\begin{venndiagram3sets}
-  \fillOnlyA
-\end{venndiagram3sets}
-\end{center}
-  
+a. Any of:
+    - {x | x is a positive integer that is divisible by 5}
+    - {$x \in \mathbb{Z}^+ \such 5 \mid x$}
+    - {$5x \such x \in \mathbb{Z}^+$}
+
+b. Any of:
+    - {x | x is an integer between -4 and 3 inclusive}
+    - {$x \in \mathbb{Z} \such -4 \le x \le 3$}
+
+c. Any of:
+    - {x | x is a prime number}
+    - {$x \such \pi(x)$}
+
 ## Question 2
 
+a.
+
+\begin{minipage}[t]{0.4\linewidth}
 \begin{center}
+$A \cap B$\\
 \begin{venndiagram3sets}
   \fillACapB
 \end{venndiagram3sets}
 \end{center}
-    
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+\begin{center}
+$(A \cap B) \setminus C$ (i.e. $A \cap B$ remove C)\\
+\begin{venndiagram3sets}
+  \fillACapBNotC
+\end{venndiagram3sets}
+\end{center}
+\end{minipage}
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{center}
+$A \setminus C$\\
+\begin{venndiagram3sets}
+  \fillANotC
+\end{venndiagram3sets}
+\end{center}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+\begin{center}
+$B \setminus C$\\
+\begin{venndiagram3sets}
+  \fillBNotC
+\end{venndiagram3sets}
+\end{center}
+\end{minipage}
+
+b.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{center}
+$A \setminus B$\\
+\begin{venndiagram3sets}
+  \fillANotB
+\end{venndiagram3sets}
+\end{center}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+\begin{center}
+$C \cup (A \setminus B)$ (i.e. $A \setminus B$ add C)\\
+\begin{venndiagram3sets}
+  \fillOnlyA \fillC
+\end{venndiagram3sets}
+\end{center}
+\end{minipage}
+
 ## Question 3
 
-```{r}
-cols <- c("$G$", "$H$", "$L$",
-          "$G \\lor \\neg H$",
-          "$\\neg (G \\land H)$",
-          "$(G \\lor \\neg H) \\land \\neg(G \\land L)$")
-kable(question_three, col.names=cols, booktabs=TRUE, align='cccccc')
-```
-
+\begin{minipage}[t]{0.4\linewidth}
+\begin{center}
+$A \setminus B$\\
+\begin{venndiagram3sets}
+  \fillANotB
+\end{venndiagram3sets}
+\end{center}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+\begin{center}
+$C \cup (A \setminus B)$ (i.e. $A \setminus B$ add C)\\
+\begin{venndiagram3sets}
+  \fillOnlyA \fillC
+\end{venndiagram3sets}
+\end{center}
+\end{minipage}
 
 ## Question 4
 
-### Conclusion
-
-```{r}
-cols <- c("\\thead{\\\\$J$}", "\\thead{\\\\$K$}",
-          "\\thead{a\\\\ $(J \\land K) \\lor (\\neg J \\land \\neg K)$}",
-          "\\thead{b\\\\ $J \\lor K$}",
-          "\\thead{c\\\\ $J \\land \\neg K$}",
-          "\\thead{d\\\\ $\\neg(\\neg J \\lor K)$}",
-          "\\thead{e\\\\ $(J \\land \\neg K) \\lor K$}")
-kable(question_four, col.names=cols, booktabs=TRUE, align='cccccc')
-```
+a. $W \rightarrow (S \land \lnot M)$
+b. $(W \land \lnot M)\rightarrow S$
+c. $W \rightarrow (S \land \lnot M)$
 
 ### Explanation
 
