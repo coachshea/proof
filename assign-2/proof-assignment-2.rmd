@@ -16,10 +16,6 @@ output:
 ```{r setup, include=FALSE}
 library(knitr)
 knitr::opts_chunk$set(echo = FALSE)
-question_three <- read.csv("~/projects/snhu/proof/question_three.csv")
-question_four <- read.csv("~/projects/snhu/proof/question_four.csv")
-question_five_prelim <- read.csv("~/projects/snhu/proof/question_five_prelim.csv")
-question_five_conclusion <- read.csv("~/projects/snhu/proof/question_five_conclusion.csv")
 ```
 
 # Assignment \#2
@@ -28,7 +24,7 @@ question_five_conclusion <- read.csv("~/projects/snhu/proof/question_five_conclu
 
 a. Any of:
     - {x | x is a positive integer that is divisible by 5}
-    - {$x \in \mathbb{Z}^+ \such 5 \mid x$}
+    - {$x \in \mathbb{Z}^+ \such 5 \equiv 0\ (\textrm{mod 5})$}
     - {$5x \such x \in \mathbb{Z}^+$}
 
 b. Any of:
@@ -43,6 +39,7 @@ c. Any of:
 
 a.
 
+\input{}
 \begin{minipage}[t]{0.4\linewidth}
 \begin{center}
 $A \cap B$\\

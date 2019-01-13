@@ -15,10 +15,14 @@ output:
 library(knitr)
 library(kableExtra)
 knitr::opts_chunk$set(echo = FALSE)
-question_three <- read.csv("~/projects/snhu/proof/question_three.csv")
-question_four <- read.csv("~/projects/snhu/proof/question_four.csv")
-question_five_prelim <- read.csv("~/projects/snhu/proof/question_five_prelim.csv")
-question_five_conclusion <- read.csv("~/projects/snhu/proof/question_five_conclusion.csv")
+question_three <- read.csv("~/projects/snhu/proof/question_three.csv",
+                           colClasses="character")
+question_four <- read.csv("~/projects/snhu/proof/question_four.csv",
+                          colClasses="character")
+question_five_prelim <- read.csv("~/projects/snhu/proof/question_five_prelim.csv",
+                                 colClasses="character")
+question_five_conclusion <- read.csv("~/projects/snhu/proof/question_five_conclusion.csv",
+                                     colClasses="character")
 ```
 
 # Assignment \#1
@@ -35,18 +39,19 @@ c. $(A \land C) \lor (B \land \neg C)$
 a. Can be either:
     - Either Doug is tall and Edie is short, or Doug is not tall.
     - Either Doug is not tall, or Doug is tall and Edie is short
-b. Either Doug is tall or Edie is not short; and 
+b. Either Doug is tall or Edie is not short
 c. Doug is not tall and Edie is not short.
-    - Alhtough this statement looks more complicated, the left
+    - Although this statement looks more complicated, the left
       side of the statement requires Doug not to be tall. Therefore,
       the only one of the two terms inside the brackets that could
       possibly be true is Edie is not short.
 
+## Question #3
 
 ```{r}
 cols <- c("\\thead{$G$}", "\\thead{$H$}", "\\thead{$L$}",
           "\\thead{$G \\lor \\neg H$}",
-          "\\thead{$\\neg (G \\land H)$}",
+          "\\thead{$\\neg (G \\land L)$}",
           "\\thead{$(G \\lor \\neg H) \\land \\neg(G \\land L)$}")
 kable(question_three, "latex", escape=F, col.names=cols,
       booktabs=T, align='cccccc', linesep='') %>%
@@ -54,10 +59,7 @@ kable(question_three, "latex", escape=F, col.names=cols,
   add_header_above(c(" " = 3, "Preliminaries"= 2, "Conclusion"=1))
 ```
 
-
 ## Question 4
-
-### Conclusion
 
 ```{r}
 cols <- c("\\thead{$J$}", "\\thead{$K$}",
@@ -78,8 +80,8 @@ kable(question_four, "latex", col.names=cols, escape=F, booktabs=T, align='ccccc
     - $K \lor \neg K$ is a tautology, therefore the above statement is equivalent to
       $J \lor K$, which is statement $b$
 - c and d are equivalent
-    - using DeMorgan's law, $d$ becomes $\neg\neg J \lor \neg K$
-    - using the Double Negation law, the above statement becomes $J \lor \neg K$,
+    - using DeMorgan's law, $d$ becomes $\neg\neg J \land \neg K$
+    - using the Double Negation law, the above statement becomes $J \land \neg K$,
       which is $c$
 
 ## Question 5
@@ -90,7 +92,7 @@ kable(question_four, "latex", col.names=cols, escape=F, booktabs=T, align='ccccc
 cols <- c("\\thead{$M$}", "\\thead{$N$}",
           "\\thead{$M \\land \\neg N$}",
           "\\thead{$\\neg M \\land N$}",
-          "\\thead{$\\neg M \\lor N$}",
+          "\\thead{$\\neg M \\land \\neg N$}",
           "\\thead{$\\neg M \\lor N$}")
 kable(question_five_prelim, "latex", escape=F, col.names=cols, booktabs=T, align='cccccc') %>%
   kable_styling(position = "center")
@@ -109,23 +111,36 @@ kable(question_five_conclusion, "latex", escape=F, col.names=cols, booktabs=T, a
 
 ### Explanation
 
-a. regular
-b. contradiction
+a. Neither
+    - Becuase they are disjunct terms, only one is required to be true and
+      either statement could be true, in that neither one is a contrdication.
+      However, if M and N were both true, or both false, then both statements
+      would fail. Therefore this statement could be true or false as the truth
+      table demonstrates.
+b. Contradiction
     - Because the only connective used is the and (i.e. $\land$) operator, the
       associative law indicates that the parentheses are unneccessary. When
       those are removed, it is apparent that all of the individual terms (i.e.
       $M, \neg N, \neg M, N$) need to be true. Therefore both $M$ and $\neg M$,
       as well as, both $N$ and $\neg N$ are required to provied an answer of
-      True. Both of those are contradictions and therefore either of those would
+      true. Both of those are contradictions and therefore either of those would
       be enought to render the statement a contradiction. 
-c. tautology
+c. Tautology
     - Statement $c$ is comprised of three disjunct terms (($\neg M \land \neg
       N$), ($\neg M \lor N$), ($M \land \neg N$)). Therefore, if any one of the
       terms is true, the statement is true. That statement $c$ is a tautology is
       most easily demonstrated by beginning with the second term ($\neg M \lor
       N$). The only way this can fail is if $M$ is true and $N$ is not true ($M
       \land \neg N$), which is the third term. Therefore, one of these two terms
-      is always true. The first term is not needed to demonstrate the tautology.
+      is always true. The first term is not needed to demonstrate the tautology
+      in this manner.
+    - Alternatively, we could start with the first term ($\neg M \land \neg N$).
+      This term fails when $M$ or $N$ (or both) are true. If $N$ is true then
+      the second term will be true regardless of the value of $M$. Therefore,
+      the only way that the first two terms could fail is if $M$ is true and N
+      is false (i.e. $M \land \neg N$), which is the third term.
+
+\pagebreak
           
 ## Question 6
 

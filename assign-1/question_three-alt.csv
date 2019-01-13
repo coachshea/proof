@@ -1,0 +1,7 @@
+G,H,L,G.or.not.H,not..G.and.L.,D.and.E
+T,T,T,T,F,F
+T,T,F,T,T,T
+T,F,T,T,F,F
+T,F,F,T,T,T
+F,T,T,F,T,F
+F,T,F,F,T,F
