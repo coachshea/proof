@@ -1,0 +1,5 @@
+p,p,p.biimplies.q,not.p.biimples.not.q
+t,t,t,t
+t,f,f,f
+f,t,f,f
+f,f,t,t

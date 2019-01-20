@@ -6,16 +6,22 @@ fontsize: 12pt
 output:
   pdf_document:
     extra_dependencies:
-      - "makecell"
-      - "booktabs"
-      - "venndiagram"
+      - makecell
+      - booktabs
+      - float
+      - venndiagram
 ---
 
 \newcommand\such{\ |\ }
 
 ```{r setup, include=FALSE}
 library(knitr)
+library(kableExtra)
 knitr::opts_chunk$set(echo = FALSE)
+question6a <- read.csv("question6a.csv", colClasses="character")
+question5a <- read.csv("question5_a.csv", colClasses="character")
+question5b <- read.csv("question5_b.csv", colClasses="character")
+question5c <- read.csv("question5_c.csv", colClasses="character")
 ```
 
 # Assignment \#2
@@ -24,7 +30,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 a. Any of:
     - {x | x is a positive integer that is divisible by 5}
-    - {$x \in \mathbb{Z}^+ \such 5 \equiv 0\ (\textrm{mod 5})$}
+    - {$x \in \mathbb{Z}^+ \such x \equiv 0\ (\textrm{mod 5})$}
+    - {$x \in \mathbb{Z}^+ \such 5|x$}
     - {$5x \such x \in \mathbb{Z}^+$}
 
 b. Any of:
@@ -37,119 +44,22 @@ c. Any of:
 
 ## Question 2
 
-a.
+a. \input{question2a.tex}
 
-\input{}
-\begin{minipage}[t]{0.4\linewidth}
-\begin{center}
-$A \cap B$\\
-\begin{venndiagram3sets}
-  \fillACapB
-\end{venndiagram3sets}
-\end{center}
-\end{minipage}
-\begin{minipage}[t]{0.4\linewidth}
-\begin{center}
-$(A \cap B) \setminus C$ (i.e. $A \cap B$ remove C)\\
-\begin{venndiagram3sets}
-  \fillACapBNotC
-\end{venndiagram3sets}
-\end{center}
-\end{minipage}
-
-\begin{minipage}[t]{0.4\linewidth}
-\begin{center}
-$A \setminus C$\\
-\begin{venndiagram3sets}
-  \fillANotC
-\end{venndiagram3sets}
-\end{center}
-\end{minipage}
-\begin{minipage}[t]{0.4\linewidth}
-\begin{center}
-$B \setminus C$\\
-\begin{venndiagram3sets}
-  \fillBNotC
-\end{venndiagram3sets}
-\end{center}
-\end{minipage}
-
-b.
-
-\begin{minipage}[t]{0.4\linewidth}
-\begin{center}
-$A \setminus B$\\
-\begin{venndiagram3sets}
-  \fillANotB
-\end{venndiagram3sets}
-\end{center}
-\end{minipage}
-\begin{minipage}[t]{0.4\linewidth}
-\begin{center}
-$C \cup (A \setminus B)$ (i.e. $A \setminus B$ add C)\\
-\begin{venndiagram3sets}
-  \fillOnlyA \fillC
-\end{venndiagram3sets}
-\end{center}
-\end{minipage}
+b. \input{question2b.tex}
 
 ## Question 3
 
-\begin{minipage}[t]{0.4\linewidth}
-\begin{center}
-$A \setminus B$\\
-\begin{venndiagram3sets}
-  \fillANotB
-\end{venndiagram3sets}
-\end{center}
-\end{minipage}
-\begin{minipage}[t]{0.4\linewidth}
-\begin{center}
-$C \cup (A \setminus B)$ (i.e. $A \setminus B$ add C)\\
-\begin{venndiagram3sets}
-  \fillOnlyA \fillC
-\end{venndiagram3sets}
-\end{center}
-\end{minipage}
+\input{question3.tex}
+
 
 ## Question 4
 
 a. $W \rightarrow (S \land \lnot M)$
 b. $(W \land \lnot M)\rightarrow S$
+    - converse
 c. $W \rightarrow (S \land \lnot M)$
-
-### Explanation
-
-- b and e are equivalent
-    - using the distribution law, $e$ become $(K \lor J) \land (K \lor \neg K)$
-    - $K \lor \neg K$ is a tautology, therefore the above statement is equivalent to
-      $J \lor K$, which is statement $b$
-- c and d are equivalent
-    - using DeMorgan's law, $d$ becomes $\neg\neg J \lor \neg K$
-    - using the Double Negation law, the above statement becomes $J \lor \neg K$,
-      which is $c$
-
-## Question 5
-
-### Preliminaries
-
-```{r}
-cols <- c("\\thead{\\\\$M$}", "\\thead{\\\\$N$}",
-          "\\thead{\\\\$M \\land \\neg N$}",
-          "\\thead{\\\\$\\neg M \\land N$}",
-          "\\thead{\\\\$\\neg M \\lor N$}",
-          "\\thead{\\\\$\\neg M \\lor N$}")
-kable(question_five_prelim, col.names=cols, booktabs=TRUE, align='cccccc')
-```
-
-### Conclusion
-
-```{r}
-cols <- c("\\thead{a\\\\ $(M \\land \\neg N) \\lor (\\neg M \\land N)$}",
-          "\\thead{b\\\\ $(M \\land \\neg N) \\land (\\neg M \\land N)$}",
-          "\\thead{c\\\\ $(\\neg M \\land \\neg N) \\lor (\\neg M \\lor N) \\lor (M \\land \\neg N)$}")
-kable(question_five_conclusion, col.names=cols, booktabs=TRUE, align='ccc')
-```
+    - equivalent
 
 ### Explanation
 
@@ -164,8 +74,73 @@ kable(question_five_conclusion, col.names=cols, booktabs=TRUE, align='ccc')
 \fillACapC
 \end{venndiagram3sets}
 \end{center}
-          
+
+## Question 5
+
+\input{question5.tex}
+
+### $P \leftrightarrow Q$
+
+```{r}
+cols <- c("\\thead{$P$}", "\\thead{$Q$}", "\\thead{$P \\rightarrow Q$}",
+          "\\thead{$Q \\leftarrow P$}", "\\thead{$P \\leftrightarrow Q$}")
+kable(question5a, "latex", escape=F, col.names=cols,
+      booktabs=T, align='ccccc', linesep='') %>%
+  kable_styling(position = "center")
+```
+
+
+### $\lnot P \leftrightarrow \lnot P$
+
+```{r}
+cols <- c("\\thead{$\\lnot P$}", "\\thead{$\\lnot Q$}",
+          "\\thead{$\\lnot P \\rightarrow \\lnot Q$}",
+          "\\thead{$\\lnot Q \\leftarrow \\lnot P$}",
+          "\\thead{$\\lnot P \\leftrightarrow \\lnot Q$}")
+kable(question5b, "latex", escape=F, col.names=cols,
+      booktabs=T, align='ccccc', linesep='') %>%
+  kable_styling(position = "center")
+```
+
+### $P \leftrightarrow Q \land \lnot P \leftrightarrow \not Q$
+
+```{r}
+cols <- c("\\thead{$P$}", "\\thead{$Q$}",
+          "\\thead{$P \\leftrightarrow Q$}",
+          "\\thead{$\\lnot P \\leftrightarrow \\lnot Q$}")
+kable(question5c, "latex", escape=F, col.names=cols,
+      booktabs=T, align='cccc', linesep='') %>%
+  kable_styling(position = "center")
+```
+ 
 ## Question 6
 
-a. $Q \land P$
-b. $P \land \neg R$
+a. $P \lor Q$
+    - $\neg P \rightarrow Q$
+    - By the rules of implication, $\neg P \rightarrow Q$ will be true whenever $P$
+      is true. This accounts for the left side of the statement $P \lor Q$. When $P$ is
+      false, the implication requries $Q$ to be true in order to be a true
+      statement, thus perfectly replicating the original disjunct term, as the
+      folowing truth table demonstrates.
+
+```{r}
+cols <- c("\\thead{$P$}", "\\thead{$Q$}", "\\thead{$P \\lor Q$}",
+          "\\thead{$\\neg P \\rightarrow Q$}")
+kable(question6a, "latex", escape=F, col.names=cols,
+      booktabs=T, align='cccc', linesep='') %>%
+  kable_styling(position = "center")
+```
+
+b. $P \land Q$
+    - $\neg(P \rightarrow \neg Q)$
+    - The $\neg$ on the outside of the parenthesis reverses the meaning of the inside
+      term (i.e. $P \rightarrow Q$). Therefore, to make this statement equivelant to
+      $P \land Q$, this statement needs to return fase only when P and Q are both true.
+      $P \leftarrow Q$ will return true whenever P is false, so this gaurentees
+      that P must be true. By setting the right-hand side of the implication to
+      $\neg Q$, This gaurantees that if $P$ is true and Q false $P \rightarrow Q$
+      will return true. Therefore, the only way the inside statement fails is if
+      $P$ and $Q$ are both true. Thus return a true for the overall statement.
+
+      \input{question6b.tex}
+

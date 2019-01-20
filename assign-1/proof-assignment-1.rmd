@@ -15,13 +15,13 @@ output:
 library(knitr)
 library(kableExtra)
 knitr::opts_chunk$set(echo = FALSE)
-question_three <- read.csv("~/projects/snhu/proof/question_three.csv",
+question_three <- read.csv("~/projects/snhu/proof/assign-1/question_three.csv",
                            colClasses="character")
-question_four <- read.csv("~/projects/snhu/proof/question_four.csv",
+question_four <- read.csv("~/projects/snhu/proof/assign-1/question_four.csv",
                           colClasses="character")
-question_five_prelim <- read.csv("~/projects/snhu/proof/question_five_prelim.csv",
+question_five_prelim <- read.csv("~/projects/snhu/proof/assign-1/question_five_prelim.csv",
                                  colClasses="character")
-question_five_conclusion <- read.csv("~/projects/snhu/proof/question_five_conclusion.csv",
+question_five_conclusion <- read.csv("~/projects/snhu/proof/assign-1/question_five_conclusion.csv",
                                      colClasses="character")
 ```
 
@@ -112,7 +112,7 @@ kable(question_five_conclusion, "latex", escape=F, col.names=cols, booktabs=T, a
 ### Explanation
 
 a. Neither
-    - Becuase they are disjunct terms, only one is required to be true and
+    - Because they are disjunct terms, only one is required to be true and
       either statement could be true, in that neither one is a contrdication.
       However, if M and N were both true, or both false, then both statements
       would fail. Therefore this statement could be true or false as the truth

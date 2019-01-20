@@ -1,0 +1,53 @@
+To show that $(A \cap B) \setminus C = (A \setminus C) \cap (B
+\setminus C)$, we begin by building the left side of the statement. First, we
+look at $(A \cap B)$, and the we remove $C$.
+
+
+\begin{minipage}[t]{0.4\linewidth}
+  \begin{center}
+  $A \cap B$\\
+  \begin{venndiagram3sets}
+    \fillACapB
+  \end{venndiagram3sets}
+\end{center}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+  \begin{center}
+  $(A \cap B) \setminus C$ (i.e. $A \cap B$ remove C)\\
+  \begin{venndiagram3sets}
+    \fillACapBNotC
+  \end{venndiagram3sets}
+  \end{center}
+\end{minipage}
+
+We then look at $A \setminus C$ and $B \setminus C$, and then take their
+intersection.
+
+\begin{minipage}[t]{0.4\linewidth}
+  \begin{center}
+  $A \setminus C$\\
+  \begin{venndiagram3sets}
+    \fillANotC
+  \end{venndiagram3sets}
+\end{center}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+  \begin{center}
+  $B \setminus C$\\
+  \begin{venndiagram3sets}
+    \fillBNotC
+  \end{venndiagram3sets}
+\end{center}
+\end{minipage}
+
+\begin{minipage}[t]{0.4\linewidth}
+  \begin{center}
+    $(A \setminus B) \cap (B \setminus C)$\\
+  \begin{venndiagram3sets}
+    \fillACapBNotC
+  \end{venndiagram3sets}
+  \end{center}
+\end{minipage}
+
+Clearly, the above Venn Diagrams demonstrate that $(A \cap B) \setminus C =
+(A \setminus C) \cap (B \setminus C)$.
