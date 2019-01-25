@@ -1,0 +1,84 @@
+---
+title: "Mathematical Proof"
+author: "John Shea"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+fontsize: 12pt
+output:
+  pdf_document:
+    extra_dependencies:
+      - makecell
+      - booktabs
+      - float
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(kableExtra)
+knitr::opts_chunk$set(echo = FALSE)
+question_three <- read.csv("~/projects/snhu/proof/assign-1/question_three.csv",
+                           colClasses="character")
+question_four <- read.csv("~/projects/snhu/proof/assign-1/question_four.csv",
+                          colClasses="character")
+question_five_prelim <- read.csv("~/projects/snhu/proof/assign-1/question_five_prelim.csv",
+                                 colClasses="character")
+question_five_conclusion <- read.csv("~/projects/snhu/proof/assign-1/question_five_conclusion.csv",
+                                     colClasses="character")
+```
+
+# Assignment \#3
+
+## Question 1
+
+a. True
+    - For all persons, it is not true that the given person is his or her own
+      twin.
+    - More succinctly: No one is their own twin.
+b. False
+    - There exists at least one person who is his or her own twin.
+c. False
+    - There exists at least one person who is twins with every other person.
+d. False
+    - For all people, there is not a single person with whom they are twins.
+e. True
+    - There exists at least one person who does not have a twin.
+f. False
+    - for all perople
+    - More succintly: No one is twins with everyone.
+
+## Question 2
+
+a. $\forall \textrm{x}(5 < \textrm{x} < 10 \rightarrow \exists
+      \textrm{a} \exists \textrm{b} \exists
+      \textrm{c}(\textrm{a}^2+\textrm{b}^2+\textrm{c}^2=\textrm{x})).$
+b. $\exists!\textrm{x}((x-4)^2=36).$
+c. $\exists!\textrm{x}((x=11)^2=49).$
+d. $\exists x \exists y(((x \ne y)^(x-4)^2=36)^(x-4)^2=36).$
+
+## Question #3
+
+\input{question_three.tex}
+
+## Question 4
+
+a. The identity element for multiplication is 1.
+
+b. Every positive real number has a positive multiplicative inverse.
+
+c. No positive real number has a negative multiplicative inverse.
+
+
+## Question 5
+
+a.
+    - $A_2 = \{2, 3, 4, 6\}$
+    - $A_3 = \{3, 4, 5, 6, 9\}$
+    - $A_4 = \{4, 5, 6, 8, 12\}$
+b.
+    - $\cap_{j \in J} A_j = \{4, 6\}$
+    - $\cup_{j \in J} A_j = \{2, 3, 4, 5, 6, 8, 9, 12\}$
+
+
+## Question 6
+
+a. $\wp(A) \cup \wp(B) \subseteq \wp(A \cup B)$
+b. $\wp(A) \cup \wp(B) = \wp(A \cup B)$

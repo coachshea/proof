@@ -1,7 +1,7 @@
 ---
 title: "Mathematical Proof"
 author: "John Shea"
-date: "`r format(Sys.time(), '%B %d, %Y')`"
+date: "January 21, 2019"
 fontsize: 12pt
 output:
   pdf_document:
@@ -52,32 +52,28 @@ b. \input{question2b.tex}
 
 \input{question3.tex}
 
+### Explanation
+
+\input{question3_explanation.tex}
 
 ## Question 4
 
 a. $W \rightarrow (S \land \lnot M)$
-b. $(W \land \lnot M)\rightarrow S$
-    - converse
+b. $S \rightarrow (W \land \lnot M)$
+    - This statement is different than a and c in that it specifies what
+      conditions can be determined from the knowledge that I will go shopping.
+      While a and c detail what information can be gleaned from the information
+      that I will go shopping.
 c. $W \rightarrow (S \land \lnot M)$
-    - equivalent
-
-### Explanation
-
-\begin{center}
-\begin{venndiagram3sets}[labelOnlyA={1},
-                         labelOnlyB={2},
-                         labelOnlyC={3},
-                         labelOnlyAB={4},
-                         labelOnlyAC={5},
-                         labelOnlyBC={6},
-                         labelABC={7},labelNotABC={8}]
-\fillACapC
-\end{venndiagram3sets}
-\end{center}
+    - equivalent to statement a. Both statements allow for the conclusion that
+      I will got shopping and I will not go to a movie based on the information that
+      it is Wednesday.
 
 ## Question 5
 
 \input{question5.tex}
+
+This can also be shown with truth tables.
 
 ### $P \leftrightarrow Q$
 
@@ -115,13 +111,12 @@ kable(question5c, "latex", escape=F, col.names=cols,
  
 ## Question 6
 
-a. $P \lor Q$
-    - $\neg P \rightarrow Q$
+a. $P \lor Q \equiv \neg P \rightarrow Q$
     - By the rules of implication, $\neg P \rightarrow Q$ will be true whenever $P$
-      is true. This accounts for the left side of the statement $P \lor Q$. When $P$ is
-      false, the implication requries $Q$ to be true in order to be a true
-      statement, thus perfectly replicating the original disjunct term, as the
-      folowing truth table demonstrates.
+      is true. This accounts for the left side of the statement $P \lor Q$. When
+      $P$ is false, the implication requries $Q$ to be true in order to be a
+      true statement (which is the conditional law), thus perfectly replicating
+      the original disjunct term, as the folowing truth table demonstrates.
 
 ```{r}
 cols <- c("\\thead{$P$}", "\\thead{$Q$}", "\\thead{$P \\lor Q$}",
@@ -131,8 +126,7 @@ kable(question6a, "latex", escape=F, col.names=cols,
   kable_styling(position = "center")
 ```
 
-b. $P \land Q$
-    - $\neg(P \rightarrow \neg Q)$
+b. $P \land Q \equiv \neg(P \rightarrow \neg Q)$
     - The $\neg$ on the outside of the parenthesis reverses the meaning of the inside
       term (i.e. $P \rightarrow Q$). Therefore, to make this statement equivelant to
       $P \land Q$, this statement needs to return fase only when P and Q are both true.
@@ -141,6 +135,7 @@ b. $P \land Q$
       $\neg Q$, This gaurantees that if $P$ is true and Q false $P \rightarrow Q$
       will return true. Therefore, the only way the inside statement fails is if
       $P$ and $Q$ are both true. Thus return a true for the overall statement.
+      This is best demonstrated with the following equivalences:
 
       \input{question6b.tex}
 

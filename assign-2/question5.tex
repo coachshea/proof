@@ -3,7 +3,11 @@ $P \leftrightarrow Q \equiv \neg P \leftrightarrow \neg Q$
 
 \begin{align*}
   &P \leftrightarrow Q &(Begin)\\
-  &\equiv (P \rightarrow Q) \land (Q \rightarrow P) &(rule)\\
-  &\equiv (\neg P \lor Q) \land (\neg Q \lor P) &(rule)\\
-  &\equiv \neg(P \land \neg Q) \land \neg(Q \land \neg P) &(rule)
+  &\equiv (P \rightarrow Q) \land (Q \rightarrow P) &(\textrm{definition of
+    bi-directionality})\\
+  &\equiv (\neg P \lor Q) \land (\neg Q \lor P) &(\textrm{Conditional Law})\\
+  &\equiv (Q \lor \neg P) \land (P \lor \neg Q) &(\textrm{Commutative Law})\\
+  &\equiv (\neg Q \rightarrow \neg P) \land (\neg P \rightarrow \neg Q)
+    &(\textrm{Conditional Law})\\
+  &\equiv \neg P \leftrightarrow \neg Q &(\textrm{definition of bi-directionality})\\
 \end{align*}

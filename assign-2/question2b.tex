@@ -1,3 +1,6 @@
+To show that $C \cup (A \setminus B) = ((A \cup C) \setminus B) \cup (B \cap
+C)$, we begin with the left side. First, we diagram $A \setminus B$, and then we add
+$C$.
 
 \begin{minipage}[t]{0.4\linewidth}
 \begin{center}
@@ -9,9 +12,50 @@
 \end{minipage}
 \begin{minipage}[t]{0.4\linewidth}
   \begin{center}
-  $C \cup (A \setminus B)$ (i.e. $A \setminus B$ add C)\\
+  $C \cup (A \setminus B)$\\
   \begin{venndiagram3sets}
     \fillOnlyA \fillC
   \end{venndiagram3sets}
   \end{center}
 \end{minipage}
+
+Next, we move to the right side of the statement. We will first diagram $A \cup
+C$, then remove $B$. Next, we will diagram $B \cap C$, and finally we will put them
+together.
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{center}
+  $A \cup C$\\
+  \begin{venndiagram3sets}
+    \fillA \fillC
+  \end{venndiagram3sets}
+  \end{center}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+  \begin{center}
+    $(A \cup C) \setminus B)$\\
+  \begin{venndiagram3sets}
+    \fillANotB \fillCNotB
+  \end{venndiagram3sets}
+  \end{center}
+\end{minipage}
+
+\begin{minipage}[t]{0.4\linewidth}
+\begin{center}
+  $B \cap C$
+  \begin{venndiagram3sets}
+  \fillBCapC
+  \end{venndiagram3sets}
+  \end{center}
+\end{minipage}
+\begin{minipage}[t]{0.4\linewidth}
+  \begin{center}
+    $((A \cup C) \setminus B) \cup (B \cap C)$\\
+  \begin{venndiagram3sets}
+    \fillANotB \fillC
+  \end{venndiagram3sets}
+  \end{center}
+\end{minipage}
+
+From the above diagrams, it's easy to see that $C \cup (A \setminus B) = ((A
+\cup C) \setminus B) \cup (B \cap C)$

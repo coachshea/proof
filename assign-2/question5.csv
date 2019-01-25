@@ -1,5 +1,5 @@
 p,p,not.p,not.q,p.implies.q,q.implies.p,p.biimplies.q,not.p.implies.not.q,not.q.implies.not.p,not.p.biimples.not.q
-t,t,f,f,t,t,t,t,t,t
-t,f,f,t,f,t,f,t,f,f
-f,t,t,f,t,f,f,f,t,f
-f,f,t,t,t,t,t,t,t,t
+T,T,F,F,T,T,T,T,T,T
+T,F,F,T,F,T,F,T,F,F
+F,T,T,F,T,F,F,F,T,F
+F,F,T,T,T,T,T,T,T,T
