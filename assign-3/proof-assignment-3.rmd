@@ -128,5 +128,15 @@ b.
 
 ## Question 6
 
-a. $\wp(A) \cup \wp(B) \subseteq \wp(A \cup B)$
-b. $\wp(A) \cup \wp(B) = \wp(A \cup B)$
+a. $\wp (A) \cup \wp (B) \subseteq \wp (A \cup B)$
+b. Fasle: $\wp (A) \cup \wp (B)=\wp (A) \cup B$
+    - Suppose $A=\{1,2\} \textrm{ , } B=\{2,3\}, \textrm{ and } A \cup B =
+      \{1, 2, 3\}. \textrm{ Then } \wp (A)=\{\emptyset, \{1\},\{2\}, \{1,2\}\}
+      \textrm{ and } \wp (B)=\{\emptyset, \{2\}, \{3\}, \{2,3\}\}.
+      \textrm{ Therefore } \wp (A) \cup \wp (B)=\{\emptyset, \{1\}, \{2\},
+      \{3\}, \{1, 2\}, \{2, 3\}\}. \textrm{ Whereas } \wp (A \cup B)=\{\emptyset,
+      \{1\}, \{2\}, \{3\}, \{1, 2\}, \{2, 3\},\\ \{1, 3\}, \{1, 2, 3\}\}.
+      \textrm{ Clearly, } \wp (A \cup B)$ has subsets {1, 3} and {1, 2, 3} that are not
+      present in $\wp (A) \cup \wp (B). \textrm{ Therefore } \wp (A) \cup \wp (B)
+      \ne\wp (A \cup B).$ 
+
