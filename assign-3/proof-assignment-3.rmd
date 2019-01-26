@@ -39,12 +39,46 @@ f. True
 
 ## Question 2
 
-a. $\forall \textrm{x}(5 < \textrm{x} < 10 \rightarrow \exists
+a. False: $\forall \textrm{x}(5 < \textrm{x} < 10 \rightarrow \exists
       \textrm{a} \exists \textrm{b} \exists
       \textrm{c}(\textrm{a}^2+\textrm{b}^2+\textrm{c}^2=\textrm{x})).$
-b. $\exists!\textrm{x}((x-4)^2=36).$
-c. $\exists!\textrm{x}((x=11)^2=49).$
-d. $\exists x \exists y(((x \ne y)^(x-4)^2=36)^(x-4)^2=36).$
+    - becase we are dealing with $\mathbb{N}$, the numbers that $x$ needs to be to
+      satisy $5<x<10\rightarrow \exists a \exists b \exists c(a^2+b^2+c^2=x)$ are 6,
+      7, 8, and 9. The problem does not state that a, b, and c cannot be equal.
+      Therefore, we can satisfy the following values:
+        - x = 6: a = 1, b = 1, c = 2.
+        - x = 8: a = 0, b = 2, c = 2.
+        - x = 9: a = 0, b = 0, c = 3; or a = 1, b = 2, c = 2.
+    - However, no combination of natural numbers can provide x a value of 7.
+    - **It should be noted that the designations of the variable (i.e. a, b, c) are
+      inconsequential to the result. There values can be interchanged in any of the
+      examples and the meaning is still the same. It only matters that the three
+      variable in total take on the three values specified.**
+b. True: $\exists!\textrm{x}((x-4)^2=36).$
+    - This statement asserts that one, and only one, natural number can render
+      $(x-4)^2 = 36$ true.
+    - The number 10 accomplishes this: $10 - 4 = 6, 6^2=36$.
+    - Any natural number greater than 10 produces a number inside the parenthesis
+      greater than 6 and, thus, results in an answer greater than 36.
+    - Any natural number less than 10 produces a number positive number less
+      than 6 or a negative number greater than -6 inside the parenthesis and
+      thus resluts in an answer less than 36.
+    - If dealing with the set $\mathbb{Z}$ instead of $\mathbb{N}$, then $-2$ would
+      be an answer as it would produce -6 inside the parenthesis, which results in
+      $36$ as the answer. However, the set $\mathbb{N}$ prohibits the use of
+      negative numbers.
+c. False: $\exists!\textrm{x}((x-11)^2=49).$
+    - This statement asserts that one, and only one, natural number can render
+      $(x-11)^2=49$ true.
+    - This statement is false because there are two natural numbers that can
+      accomplish this.
+        - $x = 18$: $18-11=7, 7^2=49$.
+        - $x=4$: $4-11=-7, (-7)^2=49$.
+d. False: $\exists x \exists y(((x \ne y)^(x-4)^2=36)^(x-4)^2=36).$
+    - This is false for the same reason that b was true. Only one natural number --
+      6 -- produces 36 when plugged into this equation. If dealing with the set
+      $\mathbb{Z}$ then this would be true (10 and -2) and statemeent b would be
+      false. However is the set $\mathbb{N}$, only 10 produces the desired result.
 
 ## Question #3
 
@@ -53,10 +87,16 @@ d. $\exists x \exists y(((x \ne y)^(x-4)^2=36)^(x-4)^2=36).$
 ## Question 4
 
 a. The identity element for multiplication is 1.
+    - $\forall x(x \cdot 1 = x).$
 
 b. Every positive real number has a positive multiplicative inverse.
+    - $\forall x \in \mathbb{R}^+ \exists y((x \cdot y = 1) ^ (x > 0))$; or
+    - $\forall x \in \mathbb{R}^+ \exists y \in \mathbb{R}^+(x \cdot y = 1).$
 
 c. No positive real number has a negative multiplicative inverse.
+    - $\forall x \in \mathbb{R}^+ \exists y(x \cdot y = 1 \rightarrow y > 0)$;
+      or
+    - $\neg\exists x \in \mathbb{R}^+ \exists y((x \cdot y = 1) \land (y < 0)).$
 
 
 ## Question 5

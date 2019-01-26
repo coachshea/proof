@@ -2,7 +2,11 @@
 $\neg\forall x \in A \neg P(x) \equiv \exists x \in P(x).$
 
 \begin{align*}
-  &\equiv x,y,z &(\textrm{rule})\\
-  &\equiv a,b,c &(\textrm{rule})\\
-  &\equiv zzzqx &(\textrm{conclusion})
+  &\equiv \neg\forall x(x \in A \rightarrow \neg P(x)) &(\textrm{expanding
+    abbreviation})\\
+  &\equiv \exists x \neg(x \in A \rightarrow \neg P(x)) &(\textrm{quantifier negation
+    law})\\
+  &\equiv \exists x \neg(x \notin A \lor \neg P(x)) &(\textrm{conditional law})\\
+  &\equiv \exists x (x \in A \land P(x)) &(\textrm{DeMorgan's Law})\\
+  &\equiv \exists x P(x)) &(\textrm{abbreviation})\\
 \end{align*}
