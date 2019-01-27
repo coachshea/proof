@@ -74,11 +74,11 @@ c. False: $\exists!\textrm{x}((x-11)^2=49).$
       accomplish this.
         - $x = 18$: $18-11=7, 7^2=49$.
         - $x=4$: $4-11=-7, (-7)^2=49$.
-d. False: $\exists x \exists y(((x \ne y)^(x-4)^2=36)^(x-4)^2=36).$
+d. False: $\exists x \exists y(((x \ne y) \land (x-4)^2=36) \land (y-4)^2=36).$
     - This is false for the same reason that b was true. Only one natural number --
       6 -- produces 36 when plugged into this equation. If dealing with the set
       $\mathbb{Z}$ then this would be true (10 and -2) and statemeent b would be
-      false. However is the set $\mathbb{N}$, only 10 produces the desired result.
+      false. However in the set $\mathbb{N}$, only 10 produces the desired result.
 
 ## Question #3
 
@@ -90,7 +90,7 @@ a. The identity element for multiplication is 1.
     - $\forall x \in \mathbb{R}(x \cdot 1 = x).$
 
 b. Every positive real number has a positive multiplicative inverse.
-    - $\forall x \in \mathbb{R}^+ \exists y((x \cdot y = 1) ^ (x > 0))$; or
+    - $\forall x \in \mathbb{R}^+ \exists y((x \cdot y = 1) \land (x > 0))$; or
     - $\forall x \in \mathbb{R}^+ \exists y \in \mathbb{R}^+(x \cdot y = 1).$
 
 c. No positive real number has a negative multiplicative inverse.
@@ -129,7 +129,9 @@ b.
 ## Question 6
 
 a. $\wp (A) \cup \wp (B) \subseteq \wp (A \cup B)$
-- $\forall X \in (\wp (A) \cup \wp (B)) (y \in X \rightarrow )$
+    - $\wp (A) \cup \wp (B)$ means that $\forall X \in (\wp (A) \cup \wp (B))(X
+      \subseteq A \lor \subseteq B)$. According to the principles of Set Theory,
+      this is equivalent to $X \subseteq \wp (A \cup B)$.
 b. Fasle: $\wp (A) \cup \wp (B)=\wp (A) \cup B$
     - Suppose $A=\{1,2\}$, $B=\{2,3\}$, and $A \cup B = \{1, 2, 3\}$.
       Then $\wp (A)=\{\emptyset, \{1\},\{2\}, \{1,2\}\}$
