@@ -1,0 +1,31 @@
+
+\newtheorem{theorem}{Theorem}
+
+\begin{theorem}
+  If $0 < \frac{1}{a} < \frac{1}{b}$, then $b < a.$
+\end{theorem}
+
+\begin{proof}
+  Suppose $0 < \frac{1}{a} < \frac{1}{b}$ Because both $\frac{1}{a}$ and
+  $\frac{1}{b}$ are both greater than zero, both $a$ and $b$ must be positive.
+  Therefore, all terms can be multiplied by $a$ and $b$ without needing to
+  change the direction of the inequality. Thus, when all three terms are
+  multiplied by $a$, the result is $0 < 1 < \frac{a}{b}$. Then when all three
+  terms are multiplied by $b$, the result is $0 < b < a$. Therefore $b$ is less
+  than $a$.
+\end{proof}
+
+A more visual depiction:
+
+
+\begin{align*}
+  0 < \frac{1}{a} < \frac{1}{b}\\  
+  &\equiv 0 \cdot a < \frac{1}{a} \cdot a < \frac{1}{b} \cdot a
+    &(\textrm{multiply all terms by a})\\
+  &\equiv 0 < 1 < \frac{a}{b} &(\textrm{simplify})\\
+  &\equiv 0 \cdot b < 1 \cdot b < \frac{a}{b} \cdot b &(\textrm{multiply all
+    terms by b})\\
+  &\equiv 0 \cdot b < 1 \cdot b < \frac{a}{b} \cdot b &(\textrm{simplify})\\
+  & \equiv 0 < b < a &(\textrm{result})\\
+  & b < a &(\textrm{conclusion})
+\end{align*}
