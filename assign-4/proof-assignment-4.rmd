@@ -11,6 +11,7 @@ output:
       - float
       - amsmath
       - amsthm
+      - mathrsfs
 ---
 
 ```{r setup, include=FALSE}
