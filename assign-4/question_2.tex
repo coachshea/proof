@@ -5,10 +5,10 @@
 \end{theorem}
 
 \begin{proof}
-  Suppose $x \notin C$. Then
+  Suppose $A \subseteq B$ and $x \in A$. Suppose $x \notin B\setminus C$ and
+  $x \notin C$. Then the only way for $x$ to not be a member of $B \setminus
+  C$ would be to not be an element of $B$. If not a member of $B$, then $x$
+  cannot be a member of any subset of $B$, which creates a contradiction with
+  the given $x \in A$ and $A \subseteq B$. Therefore, $x$ must be in $C$ or in
+  $B \setminus C$. Therefore, if $x \notin B \setminus C$, then $x \in C$.
 \end{proof}
-
-A more visual depiction:
-
-\begin{align*}
-\end{align*}
