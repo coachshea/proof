@@ -1,0 +1,33 @@
+
+\begin{theorem}
+  If $x$ is a real number and $x \ne 2$, then there is a real number $y$ such
+  that $x = \frac{2y+1}{y-1}$.
+\end{theorem}
+
+\begin{proof}
+  Suppose $\frac{2y+1}{y-1} = x$ and $x \ne 2$ Therefore, $\frac{2y+1}{y-1}
+  \ne 2$. To solve, we first multiply both sides by $y-1$ with the stipulation
+  that $y \ne 1$ because $y = 1$ would create a division by zero, which is
+  undefined. With that stipulation, we arrive at $2y+1\ne 2y-2$. We then
+  subtract $1$ from both sides, resulting in $2y \ne 2y-3$. We then subtract
+  $2y$ from both sides, which results in $0 \ne -3$. Because $0 \ne -3$ for
+  all values of $y$, this provides for an infinite number of solutions to the
+  second step of the equation. However, we began withe the stipulation that $y
+  \ne 1$. Therefore, we have shown that $\frac{2y+1}{y-1} \ne 2$ for all real
+  numbers except $1$, which proves that there exists a real number $y$, in
+  fact infinitely many, for which $\frac{2y+1}{y-1}=x$ and $x \ne 2$.
+\end{proof}
+
+A more visual depiction:
+
+\begin{align*}
+  \frac{2y+1}{y-1} \ne 2, y \ne 1\\
+        &\frac{2y+1}{y-1} \cdot (y-1) \ne 2 \cdot (y-1)&(\textrm{mutliply both sides by y-1})\\
+        &2y+1 \ne 2(y-1) &(\textrm{simplify})\\
+        &2y+1 \ne 2y-2 &(\textrm{distribute})\\
+        &2y+1-1 \ne 2y-2-1 &(\textrm{subtract 1 from both sides})\\
+        &2y \ne 2y-3 &(\textrm{simplify})\\
+        &2y-2y \ne 2y-3-2y &(\textrm{subtract 2y from both sides})\\
+        &0 \ne -3 &(\textrm{result})\\
+        &y = (-\infty, 1)\cup(1,\infty) &(\textrm{solution})
+\end{align*}
