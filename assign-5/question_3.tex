@@ -1,14 +1,41 @@
 
 \begin{theorem}
-  Given $A\setminus B \subseteq C \cap D$ and $x \in A$, if $x \notin C$, then $x
-  \in B$
+  There is a unique real number $x$ such that for every real number $y$, $xy+x–17=17y$
 \end{theorem}
 
 \begin{proof}
-  Suppose $A\setminus B \subseteq C \cap D$ and $x \in A$. Suppose $x \notin
-  C$ and $x \notin B$. It is given that $x \in A$. Subsequently, if $x \notin
-  B$, then $x \in A\setminus B$. However, $A\setminus B$ is a subset of $C
-  \cap D$. Any element which is a member of $C \cap D$, must be in $C$. Hence,
-  we have a contradiction. Therefore, if $A\setminus B \subseteq C \cap D$ and
-  $x \in A$, then $x \notin C$ implies $x \in B$.
+  First, take $xy+x-17=17y$ and add $17$ to both sides, the result is
+  $xy+x=17y+17$. Then factor $x+1$ out of both sides and get $x(y+1)=17(y+1)$.
+  Then dived both sides by $y+1$ and get $x=17$. This proves that $x=17$ for all
+  real values of $y$ except $-1$. Because, if $y=-1$ then dividing by $y+1$
+  constitutes dividing by zero which is undefined. To prove that $x=17$ holds as
+  true for $y=-1$, take the point where the division by zero would occur and
+  insert $x=17$ and $y=-1$ to test for truth. That results in the statement
+  $17(-1+1)=17(-1+1)$, which is clearly identical and leads to the true
+  statement that $0=0$.
 \end{proof}
+
+Visual proof that $x=17$ for all real numbers except $-1$.
+
+\begin{align*}
+  zy+x-17=17y\\
+  &\equiv xy+x-17+17=17y+17 &(\textrm{add 17 to both sides})\\
+  &\equiv xy+x=17y+17 &(\textrm{simplify})\\
+  &\equiv x(y+1)=17(y+1) &(\textrm{factor both sides})\\
+  &\equiv \frac{x(y+1)}{y+1}{y+1}=\frac{17(y+1)}{y+1} &(\textrm{divide both
+  sides by y-1})\\
+  &\equiv x=17 &(\textrm{conclusion})
+\end{align*}
+
+
+Visual proof that $x=17$ for $-10$.
+
+\begin{align*}
+  zy+x-17=17y\\
+  &\equiv xy+x-17+17=17y+17 &(\textrm{add 17 to both sides})\\
+  &\equiv xy+x=17y+17 &(\textrm{simplify})\\
+  &\equiv x(y+1)=17(y+1) &(\textrm{factor both sides})\\
+  &\equiv 17(-1+1)=17(-1+1) &(\textrm{insert $x=17$ and $y=-1$})\\
+  &\equiv 17(0)=17(0) &(\textrm{simplify})\\
+  &\equiv 0=0 &(\textrm{true statement})
+\end{align*}
