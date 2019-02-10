@@ -1,7 +1,17 @@
 
 \begin{theorem}
-  For $f(x)=x^2$ with domain $0 \le x \le 10$ the $\lim_{x \to 5}f(x)=25$
+  For $f(x)=x^2$ with domain $0 \le x \le 10$, then $\lim_{x \to 5}f(x)=25$
 \end{theorem}
 
 \begin{proof}
+  Given $\epsilon > 0$ and $0<|x-5|<\delta$. Suppose $\delta =
+  min\{1,\frac{\epsilon}{11}\}$. With a $\delta$ no greater than $1$,
+  $x$ can be no greater than $6$, and $|x+5|$ can be no greater than $11$.
+  Therefore:
+
+  \begin{align*}
+    |x^2-25| &=|x-5||x+5|\\
+             &<|x-5|11\\
+             &<(\frac{\epsilon}{11})\cdot 11=\epsilon
+  \end{align*}
 \end{proof}
