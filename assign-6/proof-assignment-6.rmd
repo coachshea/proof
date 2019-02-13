@@ -12,6 +12,7 @@ output:
       - amsmath
       - amsthm
       - mathrsfs
+      - enumitem
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +21,7 @@ library(kableExtra)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Assignment \#5
+# Assignment \#6
 
 ## Question 1
 
