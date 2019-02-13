@@ -1,0 +1,48 @@
+---
+title: "Mathematical Proof"
+author: "John Shea"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+fontsize: 12pt
+output:
+  pdf_document:
+    extra_dependencies:
+      - makecell
+      - booktabs
+      - float
+      - amsmath
+      - amsthm
+      - mathrsfs
+      - enumitem
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(kableExtra)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Assignment \#6
+
+## Question 1
+
+\input{question_1.tex}
+
+## Question 2
+
+\input{question_2.tex}
+
+## Question 3
+
+\input{question_3.tex}
+
+## Question 4
+
+\input{question_4.tex}
+
+## Question 5
+
+\input{question_5.tex}
+
+## Question 6
+
+\input{question_6.tex}
