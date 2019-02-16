@@ -9,9 +9,27 @@
 \begin{enumerate}[label=\alph*]
   \item $R=Dom(R) \times Ran(R)$
 
-    $S$ bleh bleh
+    Suppose $A=\{1,2,3\}$ and $B=\{a,b,c\}$ and $R=\{(1,a),(2,b),(3,c)\}$.
+    Then $R$ is a relation from $A$ to $B$. In this scenario,
+    $Dom(R)=\{1,2,3\}$ and Ran(R)=$\{a,b,c\}$. The Cartesian
+    product of $Dom(R)$ and $Ran(R)$ would feature all possible
+    combinations of the two sets. Hence, $Dom(R) \times
+    Ran(R)=\{(1,a),(1,b),(1,c),(2,a),(2,b),(2,c),(3,a),(3,b),(3,c)\}$.
+    Therefore, $R$ does not necessarily equal $Dom(R) \times Ran(R)$, and the
+    statement $R = Dom(R) \times Ran(R)$ is untrue. It would be true to state
+    that $R \subseteq Dom(R) \times Ran(R)$.
 
   \item $(R \cap S)^{-1}=R^{-1} \cap S^{-1}$
 
-    $R$ bleh
+    Suppose $(b,a) \in (R \cap S)^{-1}$. Then $(a,b) \in R \cap S$. For any
+    $(a,b) \in R, (b,a) \in R^{-1}$ and for any $(a,b) \in S, (b,a) \in
+    S^{-1}$. Hence, $(b,a) \in R^{-1}$ and $S^{-1}$, and consequently $(b,a) \in
+    R^{-1} \cap S^{-1}$. Therefore, $(R \cap
+    S)^{-1} \subseteq R^{-1} \cap S^{-1}$
+
+    Suppose $(b,a) \in R^{-1} \cap S^{-1}$. Then $(b,a) \in R^{-1}$ and $(b,a)
+    \in S^{-1}$. Hence, $(a,b) \in R$ and $(a,b) \in S$, which means $(a,b) \in
+    (R \cap S)$. Hence, $(b,a) \in (R \cap S)^{-1}$. Therefore, $R^{-1} \cap
+    S^{-1} \subseteq (R \cap S)^{-1}$. Taken together this proves that $(R \cap
+    S)^{-1} = R^{-1} \cap S^{-1}$.
 \end{enumerate}
