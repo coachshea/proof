@@ -1,0 +1,21 @@
+
+\begin{theorem}
+  $R$ is a partially ordered set.
+\end{theorem}
+
+\begin{proof}
+  $R$ is reflexive because for any $x$, $f(x) = f(x)$ and hence renders $f(x)
+  \le f(x)$ true. Therefore for an decimal $x$, $(x,x) \in R$, and $R$ is
+  reflexive.
+
+  $R$ is also transitive because for any $(a,b)\in R$ and $(b,c) \in R$, $f(a)
+  \le f(b) \le f(c)$. Hence $f(a) \le f(c)$. Therefore $(a,c) \in R$ and $R$ is
+  transitive.
+
+  Finally, $R$ is antisymmetric because for any $(a,b)\in R$, if $a \ne b$
+  (which would be reflexivity), then $f(a) < f(b)$. Hence $f(b) > f(a)$, and
+  therefore $(b,a) \notin R$.
+
+  Taken together, $R$ is reflexive, transitive and antisymmetric and therefore
+  meets every requirement of a partially ordered relation.
+\end{proof}
