@@ -1,0 +1,30 @@
+
+\begin{theorem}
+  The relation $R$ on $\mathbb{Z}$, such that $(a,b)\in R$ if and only if $a$
+  and $b$, when written out, have the same number of $5s$ is an equivalence
+  relation.
+\end{theorem}
+
+\begin{proof}
+  Suppose $\{B_i|i\in \mathbb{Z}^+\}$ is an indexed family of sets such that
+  $B_1$ contains all of the infinitely many numbers which contain one $5$, and
+  $B_2$ contains all of the infinitely many numbers which contain two $5s$,
+  and so on for an infinitely number of sets $B_i$. Clearly, no number can
+  reside in more than one of the subsets of $B$.
+
+  Relation $R$ is such that if, and only if, for a given $(a,b)$, both $a$ and
+  $b$ are taken from the same subset of $B$, then $(a,b) \in R$. Thus, for
+  every $a$ in a given subset of $B$, $(a,a)$ would always meet the criteria
+  for being an element of $R$ and therefore, $R$ is reflexive.
+
+  Also, because for any given $(a,b) \in R$, both $a$ and $b$ reside in the same
+  subset of $B$, $(b,a)$ would meet the criteria for inclusion in $R$.
+  Therefore, R is symmetric.
+
+  Lastly, if $(a,b)$ and $(b,c)$ are elements of $R$, then $a$, $b$, and $c$ are
+  all elements of the same subsets of $B$. Therefore $(a,c)$ meets the
+  requirement of a transitive relation.
+
+  Taken together, $R$ is proven to be reflexive, symmetric, and transitive; and
+  therefore, $R$ is an equivalence relation.
+\end{proof}

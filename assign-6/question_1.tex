@@ -8,11 +8,17 @@
 \end{theorem}
 
 \begin{proof}
-  Suppose $(a,b) \in A \times (\cup_{i\in I}B_i)$. Then $a \in A$ and $b \in
-  \cup_{i\in I}$.
-  so $A \times (\cup_{i\in I}B_i) \subseteq \cup_{i\in I})(A \times B)$.
+  Suppose $(a,b) \in A \times (\cup_{i\in I}B_i)$. Then $a \in A$ and $b
+  \in \cup_{i\in I}B_i$. Because $A$ is not affected by $i$, then for every
+  $(a,b)\in A \times (\cup_{i\in I}B_i)$, $a \in (\cup_{i\in I}A)$ and $b
+  \in (\cup_{i\in I}B_i)$. Therefore, $A \times (\cup_{i\in I}B_i) \subseteq
+  \cup_{i\in I})(A \times B)$.
 
-  Suppose $(x,y) \in \cup_{i\in I}(A \times B)$. Then $x \in$ So, $\cup_{i\in
-  I})(A \times B) \subseteq A \times (\cup_{i\in I}B_i)$.
-  Therefore $A \times (\cup_{i\in I}=\cup_{i\in I})(A \times B)$.
+  Suppose $(a,b) \in \cup_{i\in I}(A \times B)$. Then $a \in (\cup_{i\in I}A)$
+  and $b \in (\cup_{i\in I}B_i)$. Because $A$ is unaffected by $i$, then for
+  every $(a,b) \in \cup_{i\in I}(A \times B)$, $a \in A$ and $b \in (\cup_{i\in I}B_i)$
+  Therefore $\cup_{i\in I})(A \times B) \subseteq A \times (\cup_{i\in I}B_i)$.
+
+  Taken together this proves that $A \times (\cup_{i\in I}B_i) =\cup_{i\in
+  I}(A \times B)$
 \end{proof}
