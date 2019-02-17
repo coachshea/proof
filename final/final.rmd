@@ -14,7 +14,7 @@ library(kableExtra)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Proving $\lim_{x\rightarrow 4}=\frac{1}{4}, \{x \in \mathbb{R}|1 < x < 7\}$
+# Proving $\lim_{x\rightarrow 4}\frac{1}{x}=\frac{1}{4}, \{x \in \mathbb{R}|1 < x < 7\}$
 
 ## Formal Definition of a Limit
 
@@ -24,10 +24,30 @@ corresponding number $\delta > 0$ such that $0<|x-a|<\delta \Rightarrow
 
 ## Applying Formal Definition to the Current Proof
 
-$\lim_{x\rightarrow 4}=\frac{1}{4}$ if for every $\epsilon > 0$ there is a
+$\lim_{x\rightarrow 4}\frac{1}{x}=\frac{1}{4}$ if for every $\epsilon > 0$ there is a
 corresponding number $\delta > 0$ such that $0<|x-4|<\delta \Rightarrow
 |\frac{1}{x}-\frac{1}{4}| < \epsilon$.
 
 ## Intuition - Graph
 
+\begin{center}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{./graph.pdf}
+\end{center}
+
+## Preliminaries
+
+- $|\frac{1}{x}-\frac{1}{4}| < \epsilon$
+- $|x-4| < \delta$
+- $\delta = 4\epsilon$
+- $1<x<7$
+- $\frac{1}{7} < \frac{1}{x} < 1$
+
 ## Formal Proof
+
+\input{./formal-proof.tex}
+
+## Formal Proof (continued)
+
+\input{./formal-proof-cont.tex}
+
+# Questions
