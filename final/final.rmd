@@ -1,18 +1,11 @@
 ---
-title: "Mathematical Proof"
+title: "Mathematical Proof: Final Assignment"
 author: "John Shea"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 fontsize: 12pt
 output:
-  pdf_document:
-    extra_dependencies:
-      - makecell
-      - booktabs
-      - float
-      - amsmath
-      - amsthm
-      - mathrsfs
-      - enumitem
+  beamer_presentation:
+      incremental: true
 ---
 
 ```{r setup, include=FALSE}
@@ -21,10 +14,20 @@ library(kableExtra)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Assignment \#Final
+# Proving $\lim_{x\rightarrow 4}=\frac{1}{4}, \{x \in \mathbb{R}|1 < x < 7\}$
 
-## Question 1
+## Formal Definition of a Limit
 
-<!-- Consider the function f(x) = 1/x for x ∈ℝand 1 < x < 7. Prove that limx→4f(x) = 1/4. -->
+$\lim_{x\rightarrow a}f(x)=L$ if for every $\epsilon > 0$ there is a
+corresponding number $\delta > 0$ such that $0<|x-a|<\delta \Rightarrow
+|f(x)-L|< \epsilon$.
 
-Consider the function $f(x)=\frac{1}{x}$ for $x \in R$ and $a<x<7$. Prove 
+## Applying Formal Definition to the Current Proof
+
+$\lim_{x\rightarrow 4}=\frac{1}{4}$ if for every $\epsilon > 0$ there is a
+corresponding number $\delta > 0$ such that $0<|x-4|<\delta \Rightarrow
+|\frac{1}{x}-\frac{1}{4}| < \epsilon$.
+
+## Intuition - Graph
+
+## Formal Proof
