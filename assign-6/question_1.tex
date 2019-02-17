@@ -4,7 +4,7 @@
 
 \begin{theorem}
   If $A$ is a set and $\{B_i | i \in I\}$ is an indexed family of sets. $A
-  \times (\cup_{i\in I}B_i) =\cup_{i\in I})(A \times B)$.
+  \times (\cup_{i\in I}B_i) =\cup_{i\in I})(A \times B_i)$.
 \end{theorem}
 
 \begin{proof}
@@ -12,13 +12,14 @@
   \in \cup_{i\in I}B_i$. Because $A$ is not affected by $i$, then for every
   $(a,b)\in A \times (\cup_{i\in I}B_i)$, $a \in (\cup_{i\in I}A)$ and $b
   \in (\cup_{i\in I}B_i)$. Therefore, $A \times (\cup_{i\in I}B_i) \subseteq
-  \cup_{i\in I})(A \times B)$.
+  \cup_{i\in I}(A \times B_i)$.
 
-  Suppose $(a,b) \in \cup_{i\in I}(A \times B)$. Then $a \in (\cup_{i\in I}A)$
-  and $b \in (\cup_{i\in I}B_i)$. Because $A$ is unaffected by $i$, then for
-  every $(a,b) \in \cup_{i\in I}(A \times B)$, $a \in A$ and $b \in (\cup_{i\in I}B_i)$
-  Therefore $\cup_{i\in I})(A \times B) \subseteq A \times (\cup_{i\in I}B_i)$.
+  Suppose $(a,b) \in \cup_{i\in I}(A \times B_i)$. Then $a \in (\cup_{i\in
+  I}A)$ and $b \in (\cup_{i\in I}B_i)$. Because $A$ is unaffected by $i$,
+  then for every $(a,b) \in \cup_{i\in I}(A \times B_i)$, $a \in A$ and $b \in
+  (\cup_{i\in I}B_i)$ Therefore $\cup_{i\in I}(A \times B_i) \subseteq A \times
+  (\cup_{i\in I}B_i)$.
 
   Taken together this proves that $A \times (\cup_{i\in I}B_i) =\cup_{i\in
-  I}(A \times B)$
+  I}(A \times B_i)$
 \end{proof}
